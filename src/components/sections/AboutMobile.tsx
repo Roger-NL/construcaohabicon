@@ -61,10 +61,15 @@ export function AboutMobile() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
         >
-          Começámos pequenos, com reformas e pequenas obras. Hoje já realizamos
-          projetos de todos os tamanhos. O nosso segredo? Tratar cada obra como se
-          fosse a nossa própria casa. Somos uma equipa portuguesa com experiência
-          de verdade - aquela que só se ganha com anos no terreno.
+          Somos uma empresa de construção civil que actua em obras de pequena e grande dimensão,
+          tanto no setor residencial como comercial e industrial.
+          <br /><br />
+          Prestamos um serviço completo, incluindo soluções chave na mão, desde o projecto até à entrega final.
+          <br /><br />
+          Trabalhamos com materiais certificados e de primeira qualidade, para entregar resultados de
+          excelência em cada projeto.
+          <br /><br />
+          O nosso compromisso é a competência, dedicação, estima pelo cliente e pela sua visão.
         </motion.p>
 
         <div className="grid grid-cols-2 gap-4">

@@ -6,28 +6,24 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 export function ContactMobile() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-  
+
   const contacts = [
     {
       icon: Phone,
       label: 'Telefone',
-      value: '+351 XXX XXX XXX',
-      href: 'tel:+351XXXXXXXXX',
+      value: '927 194 802',
+      subtext: 'João Rangel',
+      href: 'tel:+351927194802',
     },
     {
       icon: Mail,
       label: 'Email',
-      value: 'geral@habicon.pt',
-      href: 'mailto:geral@habicon.pt',
-    },
-    {
-      icon: MapPin,
-      label: 'Localização',
-      value: 'Portugal',
-      href: '#',
+      value: 'metrica.resiliente@outlook.com',
+      subtext: 'Resposta rápida',
+      href: 'mailto:metrica.resiliente@outlook.com',
     },
   ];
-  
+
   return (
     <section
       id="contact"
@@ -56,7 +52,7 @@ export function ContactMobile() {
             Pronto para começar o seu projeto? Entre em contacto
           </p>
         </div>
-        
+
         <div className="space-y-4 mb-12">
           {contacts.map((contact, index) => (
             <motion.a
@@ -73,23 +69,24 @@ export function ContactMobile() {
             >
               {/* Animated background on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              
-              <motion.div 
+
+              <motion.div
                 className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-primary/30 to-gear-secondary/30 backdrop-blur-sm flex items-center justify-center flex-shrink-0 border border-primary/30"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
                 <contact.icon className="text-primary" size={24} />
               </motion.div>
-              
+
               <div className="relative">
                 <p className="text-sm text-muted-foreground font-medium mb-1">{contact.label}</p>
                 <p className="text-lg font-bold text-foreground">{contact.value}</p>
+                <p className="text-xs text-muted-foreground mt-1">{contact.subtext}</p>
               </div>
             </motion.a>
           ))}
         </div>
-        
+
         <motion.div
           className="text-center"
           initial={{ opacity: 0 }}
@@ -100,7 +97,7 @@ export function ContactMobile() {
             © 2024 Habicon® Construção
           </p>
           <p className="text-xs text-muted-foreground">
-            Qualidade e Confiança em Cada Projeto
+            O seu Projecto, a Nossa Missão
           </p>
         </motion.div>
       </motion.div>

@@ -11,40 +11,46 @@ import gardeningImage from '@/assets/gardening-mobile.jpg';
 
 const services = [
   {
-    title: 'Chave na Mão',
+    title: 'Projecto Chave na Mão',
     icon: Home,
-    description: 'Cuidamos de tudo - desde o projeto inicial até a entrega das chaves. Sem stress, sem surpresas.',
+    description: 'Propomos soluções completas que integram todas as etapas de um projeto, desde a concepção até a entrega final.',
     image: teamImage,
+    fullDescription: 'Responsabilizamo-nos pela gestão dos diferentes fornecedores, contratação de mão-de-obra, integração das várias especialidades, controlo de prazos e burocracias enquanto o cliente pode manter o foco no que realmente lhe importa: a idealização. Esta é a forma mais prática e cómoda de concretizar um projeto permitindo que o cliente disfrute do serviço já pronto.',
   },
   {
     title: 'Ladrilhamento',
     icon: Grid3x3,
-    description: 'Colocamos azulejos e ladrilhos com aquele acabamento que faz a diferença. Cada junta no sítio certo.',
+    description: 'Aplicação de cerâmicas e outros materiais de revestimento em pavimentos e paredes, garantindo um acabamento de primeira qualidade.',
     image: tilingImage,
+    fullDescription: 'Acabamento de primeira qualidade e estereotomias adequadas, com recurso a máquina de corte a água. • Experiência: Apoio na escolha de soluções técnicas e estéticas. • Preparação de superfícies: Reboco, nivelamento e isolamento antes do revestimento. • Fachadas: Revestimento exterior com cerâmica, pedra ou similares. • Ladrilho hidráulico: Aplicação decorativa em interiores e exteriores.',
   },
   {
     title: 'Microcimento',
     icon: Droplet,
-    description: 'Aquele revestimento moderno e contínuo que está na moda. Ideal para quem quer algo diferente e sofisticado.',
+    description: 'Revestimento contínuo, sem juntas, feito à base de cimento, resinas, aditivos e pigmentos, aplicado em camadas finas.',
     image: microcementImage,
+    fullDescription: 'O microcimento é aplicado em camadas finas sobre diversos tipos de superfícies, tanto em ambientes internos como externos. Oferece um acabamento estético moderno e elegante, com alta resistência e durabilidade, além de ser versátil e personalizável com uma vasta gama de cores e texturas.',
   },
   {
-    title: 'Pintura',
+    title: 'Pintura Profissional',
     icon: Paintbrush,
-    description: 'Pintamos paredes, tetos, fachadas... o que precisar. Sempre com cuidado para não sujar nada.',
+    description: 'Pinturas interiores e exteriores, passando pela proteção de recheio, isolamento de pavimentos ou via pública.',
     image: paintingImage,
+    fullDescription: 'Limpeza e preparação dos suportes a pintar, sejam em pladur, argamassa, madeira ou metal. Asseguramos um trabalho rápido com resultado uniforme e durável. • Fachadas: Trabalhos em altura e em segurança. • Lavagem: Lavagem de superfícies com jato de água de alta pressão. • Descontaminantes: Aplicação de algicida e fungicida. • Aplicação de selantes: Tratamento de fissuras, juntas e pontos críticos.',
   },
   {
-    title: 'Alvenaria',
+    title: 'Alvenaria, Barramento, Pladur e Capoto',
     icon: Boxes,
-    description: 'Levantamos paredes, montamos divisórias em pladur. Estruturas sólidas feitas para durar.',
+    description: 'Executamos estruturas em alvenaria, mas também em pladur assente em diferentes tipo de perfis, incluindo isolamento acústico e térmico.',
     image: masonryImage,
+    fullDescription: 'Entregamos um acabamento de excelência passando por reboco, barramento (armado ou não), estuque ou capoto.',
   },
   {
     title: 'Jardinagem',
     icon: Leaf,
     description: 'Mantemos o seu jardim sempre bonito. Corte de relva, poda, arranjos... Deixamos tudo a brilhar.',
     image: gardeningImage,
+    fullDescription: 'Serviço completo de manutenção e cuidado de jardins, garantindo um espaço verde sempre bem cuidado e apresentável.',
   },
 ];
 
@@ -96,9 +102,14 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             transition={{ duration: 2, repeat: Infinity }}
           />
         </h3>
-        <p className="text-body text-muted-foreground leading-relaxed">
+        <p className="text-body text-muted-foreground leading-relaxed mb-3">
           {service.description}
         </p>
+        {service.fullDescription && (
+          <p className="text-sm text-muted-foreground/80 leading-relaxed">
+            {service.fullDescription}
+          </p>
+        )}
       </div>
 
       {/* Bottom accent line */}
@@ -142,7 +153,7 @@ export function ServicesMobile() {
         </h2>
         <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
         <p className="text-body text-muted-foreground max-w-md mx-auto">
-          Tudo o que você precisa para a sua obra
+          Soluções completas para o seu projecto
         </p>
       </motion.div>
 

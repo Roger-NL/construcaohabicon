@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import heroImage from '@/assets/hero-mobile.jpg';
 
 export function HeroMobile() {
@@ -37,17 +37,6 @@ export function HeroMobile() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {/* Badge */}
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 mb-6"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Sparkles className="text-primary" size={16} />
-            <span className="text-sm font-semibold text-primary">Excelência em Construção</span>
-          </motion.div>
-
           <motion.h1
             className="text-display font-black text-foreground mb-3 tracking-tight leading-none"
             style={{
@@ -63,11 +52,11 @@ export function HeroMobile() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Construção Civil
+            construção
           </motion.p>
 
           <p className="text-body text-muted-foreground max-w-md mx-auto mb-10 leading-relaxed">
-            Obras com qualidade e sem dor de cabeça. Fazemos do seu jeito, no prazo combinado.
+            O seu Projecto, a Nossa Missão
           </p>
         </motion.div>
 
