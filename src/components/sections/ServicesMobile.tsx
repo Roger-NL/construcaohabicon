@@ -14,6 +14,8 @@ import frenteAntes from '@/assets/frente-antes.jpg';
 import frenteDepois from '@/assets/frente-depois.png';
 import pinturaAntes from '@/assets/pintura-antes.png';
 import pinturaDepois from '@/assets/pintura-depois.jpg';
+import chaveAntes from '@/assets/chave-antes.jpg';
+import chaveDepois from '@/assets/chave-depois.png';
 import gardeningImage from '@/assets/gardening-mobile.jpg';
 
 const services = [
@@ -21,7 +23,10 @@ const services = [
     title: 'Projecto Chave na Mão',
     icon: Home,
     description: 'Propomos soluções completas que integram todas as etapas de um projeto, desde a concepção até a entrega final.',
-    image: teamImage,
+    beforeAfter: {
+      before: chaveAntes,
+      after: chaveDepois,
+    },
     fullDescription: 'Responsabilizamo-nos pela gestão dos diferentes fornecedores, contratação de mão-de-obra, integração das várias especialidades, controlo de prazos e burocracias enquanto o cliente pode manter o foco no que realmente lhe importa: a idealização. Esta é a forma mais prática e cómoda de concretizar um projeto permitindo que o cliente disfrute do serviço já pronto.',
   },
   {

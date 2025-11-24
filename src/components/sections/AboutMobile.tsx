@@ -42,26 +42,23 @@ export function AboutMobile() {
         </div>
 
         <motion.div
-          className="text-body text-muted-foreground mb-8 leading-relaxed text-justify max-w-2xl mx-auto"
+          className="text-body text-muted-foreground mb-8 leading-relaxed text-justify max-w-2xl mx-auto space-y-4"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
         >
-          <p>
-            <span className="float-left text-5xl font-bold text-primary mr-3 mt-[-6px] leading-none">S</span>
+          <p className="relative">
+            <span className="float-left text-6xl font-bold text-primary mr-3 mt-[-8px] leading-[0.8]">S</span>
             omos uma empresa de construção civil que actua em obras de pequena e grande dimensão,
             tanto no setor residencial como comercial e industrial.
           </p>
-          <br />
           <p>
             Prestamos um serviço completo, incluindo soluções chave na mão, desde o projecto até à entrega final.
           </p>
-          <br />
           <p>
             Trabalhamos com materiais certificados e de primeira qualidade, para entregar resultados de
             excelência em cada projeto.
           </p>
-          <br />
           <p>
             O nosso compromisso é a competência, dedicação, estima pelo cliente e pela sua visão.
           </p>
