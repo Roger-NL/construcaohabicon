@@ -3,10 +3,15 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Home, Grid3x3, Droplet, Paintbrush, Boxes, Leaf } from 'lucide-react';
 import teamImage from '@/assets/team-mobile.jpg';
-import tilingImage from '@/assets/tiling-mobile.jpg';
-import microcementImage from '@/assets/microcement-mobile.jpg';
-import paintingImage from '@/assets/painting-mobile.jpg';
-import masonryImage from '@/assets/masonry-mobile.jpg';
+import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider';
+
+// Import before/after images
+import casadbanhoAntes from '@/assets/casadbanho-antes.jpg';
+import casadbanhoDep from '@/assets/casadbanho-depois.jpg';
+import corredorAntes from '@/assets/corredor-antes.jpeg';
+import corredorDepois from '@/assets/corredor-depois.jpg';
+import frenteAntes from '@/assets/frente-antes.jpg';
+import frenteDepois from '@/assets/frente-depois.png';
 import gardeningImage from '@/assets/gardening-mobile.jpg';
 
 const services = [
@@ -21,28 +26,37 @@ const services = [
     title: 'Ladrilhamento',
     icon: Grid3x3,
     description: 'Aplicação de cerâmicas e outros materiais de revestimento em pavimentos e paredes, garantindo um acabamento de primeira qualidade.',
-    image: tilingImage,
+    beforeAfter: {
+      before: casadbanhoAntes,
+      after: casadbanhoDep,
+    },
     fullDescription: 'Acabamento de primeira qualidade e estereotomias adequadas, com recurso a máquina de corte a água. • Experiência: Apoio na escolha de soluções técnicas e estéticas. • Preparação de superfícies: Reboco, nivelamento e isolamento antes do revestimento. • Fachadas: Revestimento exterior com cerâmica, pedra ou similares. • Ladrilho hidráulico: Aplicação decorativa em interiores e exteriores.',
   },
   {
     title: 'Microcimento',
     icon: Droplet,
     description: 'Revestimento contínuo, sem juntas, feito à base de cimento, resinas, aditivos e pigmentos, aplicado em camadas finas.',
-    image: microcementImage,
+    beforeAfter: {
+      before: corredorAntes,
+      after: corredorDepois,
+    },
     fullDescription: 'O microcimento é aplicado em camadas finas sobre diversos tipos de superfícies, tanto em ambientes internos como externos. Oferece um acabamento estético moderno e elegante, com alta resistência e durabilidade, além de ser versátil e personalizável com uma vasta gama de cores e texturas.',
   },
   {
     title: 'Pintura Profissional',
     icon: Paintbrush,
     description: 'Pinturas interiores e exteriores, passando pela proteção de recheio, isolamento de pavimentos ou via pública.',
-    image: paintingImage,
+    beforeAfter: {
+      before: frenteAntes,
+      after: frenteDepois,
+    },
     fullDescription: 'Limpeza e preparação dos suportes a pintar, sejam em pladur, argamassa, madeira ou metal. Asseguramos um trabalho rápido com resultado uniforme e durável. • Fachadas: Trabalhos em altura e em segurança. • Lavagem: Lavagem de superfícies com jato de água de alta pressão. • Descontaminantes: Aplicação de algicida e fungicida. • Aplicação de selantes: Tratamento de fissuras, juntas e pontos críticos.',
   },
   {
     title: 'Alvenaria, Barramento, Pladur e Capoto',
     icon: Boxes,
     description: 'Executamos estruturas em alvenaria, mas também em pladur assente em diferentes tipo de perfis, incluindo isolamento acústico e térmico.',
-    image: masonryImage,
+    image: teamImage,
     fullDescription: 'Entregamos um acabamento de excelência passando por reboco, barramento (armado ou não), estuque ou capoto.',
   },
   {
@@ -70,31 +84,46 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         boxShadow: '0 10px 40px hsl(var(--background) / 0.5)',
       }}
     >
-      <div className="relative h-52 overflow-hidden">
-        <motion.img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-full object-cover"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.6 }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+      {/* Image or Before/After Slider */}
+      <div className="relative overflow-hidden">
+        {service.beforeAfter ? (
+          <BeforeAfterSlider
+            beforeImage={service.beforeAfter.before}
+            afterImage={service.beforeAfter.after}
+          />
+        ) : (
+          <div className="relative h-64">
+            <motion.img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.6 }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+          </div>
+        )}
 
-        {/* Icon with gear background */}
-        <motion.div
-          className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30"
-          whileHover={{ rotate: 360 }}
-          transition={{ duration: 0.8 }}
-        >
-          <service.icon className="text-primary w-8 h-8" />
-        </motion.div>
+        {/* Icon with gear background - only show if no before/after */}
+        {!service.beforeAfter && (
+          <motion.div
+            className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30"
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.8 }}
+          >
+            <service.icon className="text-primary w-8 h-8" />
+          </motion.div>
+        )}
 
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Hover overlay - only if no before/after */}
+        {!service.beforeAfter && (
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        )}
       </div>
 
       <div className="p-6">
         <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+          <service.icon className="text-primary w-6 h-6" />
           {service.title}
           <motion.span
             className="inline-block w-2 h-2 rounded-full bg-primary"
