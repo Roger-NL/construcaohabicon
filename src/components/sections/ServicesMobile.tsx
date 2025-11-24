@@ -12,6 +12,8 @@ import corredorAntes from '@/assets/corredor-antes.jpeg';
 import corredorDepois from '@/assets/corredor-depois.jpg';
 import frenteAntes from '@/assets/frente-antes.jpg';
 import frenteDepois from '@/assets/frente-depois.png';
+import pinturaAntes from '@/assets/pintura-antes.png';
+import pinturaDepois from '@/assets/pintura-depois.jpg';
 import gardeningImage from '@/assets/gardening-mobile.jpg';
 
 const services = [
@@ -47,8 +49,8 @@ const services = [
     icon: Paintbrush,
     description: 'Pinturas interiores e exteriores, passando pela proteção de recheio, isolamento de pavimentos ou via pública.',
     beforeAfter: {
-      before: frenteAntes,
-      after: frenteDepois,
+      before: pinturaAntes,
+      after: pinturaDepois,
     },
     fullDescription: 'Limpeza e preparação dos suportes a pintar, sejam em pladur, argamassa, madeira ou metal. Asseguramos um trabalho rápido com resultado uniforme e durável. • Fachadas: Trabalhos em altura e em segurança. • Lavagem: Lavagem de superfícies com jato de água de alta pressão. • Descontaminantes: Aplicação de algicida e fungicida. • Aplicação de selantes: Tratamento de fissuras, juntas e pontos críticos.',
   },
@@ -56,7 +58,10 @@ const services = [
     title: 'Alvenaria, Barramento, Pladur e Capoto',
     icon: Boxes,
     description: 'Executamos estruturas em alvenaria, mas também em pladur assente em diferentes tipo de perfis, incluindo isolamento acústico e térmico.',
-    image: teamImage,
+    beforeAfter: {
+      before: frenteAntes,
+      after: frenteDepois,
+    },
     fullDescription: 'Entregamos um acabamento de excelência passando por reboco, barramento (armado ou não), estuque ou capoto.',
   },
   {
