@@ -42,35 +42,30 @@ export function AboutMobile() {
         </div>
 
         <motion.div
-          className="relative rounded-2xl overflow-hidden mb-8"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <img
-            src={constructionImage}
-            alt="Equipa Habicon"
-            className="w-full h-64 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-        </motion.div>
-
-        <motion.p
-          className="text-body text-muted-foreground mb-8 leading-relaxed text-center"
+          className="text-body text-muted-foreground mb-8 leading-relaxed text-justify max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
         >
-          Somos uma empresa de construção civil que actua em obras de pequena e grande dimensão,
-          tanto no setor residencial como comercial e industrial.
-          <br /><br />
-          Prestamos um serviço completo, incluindo soluções chave na mão, desde o projecto até à entrega final.
-          <br /><br />
-          Trabalhamos com materiais certificados e de primeira qualidade, para entregar resultados de
-          excelência em cada projeto.
-          <br /><br />
-          O nosso compromisso é a competência, dedicação, estima pelo cliente e pela sua visão.
-        </motion.p>
+          <p>
+            <span className="float-left text-5xl font-bold text-primary mr-3 mt-[-6px] leading-none">S</span>
+            omos uma empresa de construção civil que actua em obras de pequena e grande dimensão,
+            tanto no setor residencial como comercial e industrial.
+          </p>
+          <br />
+          <p>
+            Prestamos um serviço completo, incluindo soluções chave na mão, desde o projecto até à entrega final.
+          </p>
+          <br />
+          <p>
+            Trabalhamos com materiais certificados e de primeira qualidade, para entregar resultados de
+            excelência em cada projeto.
+          </p>
+          <br />
+          <p>
+            O nosso compromisso é a competência, dedicação, estima pelo cliente e pela sua visão.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-2 gap-4">
           {features.map((feature, index) => (
