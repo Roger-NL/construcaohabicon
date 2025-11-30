@@ -86,8 +86,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     <motion.div
       ref={ref}
       className="relative rounded-2xl overflow-hidden backdrop-blur-sm bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group"
-      initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-      animate={isInView ? { x: 0, opacity: 1 } : {}}
+      initial={{ y: 50, opacity: 0 }}
+      animate={isInView ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
       style={{
@@ -171,7 +171,7 @@ export function ServicesMobile() {
     <section
       id="services"
       ref={ref}
-      className="min-h-screen py-20 px-6 bg-background"
+      className="py-10 px-6 bg-background"
     >
       <motion.div
         initial={{ y: 50, opacity: 0 }}

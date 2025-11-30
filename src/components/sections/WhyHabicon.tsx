@@ -34,7 +34,7 @@ export function WhyHabicon() {
         <section
             id="why-habicon"
             ref={ref}
-            className="min-h-screen py-20 px-6 bg-secondary"
+            className="py-10 px-6 bg-secondary"
         >
             <motion.div
                 initial={{ y: 50, opacity: 0 }}

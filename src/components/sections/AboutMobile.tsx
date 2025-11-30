@@ -19,7 +19,7 @@ export function AboutMobile() {
     <section
       id="about"
       ref={ref}
-      className="min-h-screen py-20 px-6 bg-secondary"
+      className="py-10 px-6 bg-secondary"
     >
       <motion.div
         initial={{ y: 50, opacity: 0 }}
@@ -42,7 +42,7 @@ export function AboutMobile() {
         </div>
 
         <motion.div
-          className="text-body text-muted-foreground mb-8 leading-relaxed text-justify max-w-2xl mx-auto space-y-4"
+          className="text-body text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto space-y-4"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}

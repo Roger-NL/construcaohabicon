@@ -28,7 +28,7 @@ export function ContactMobile() {
     <section
       id="contact"
       ref={ref}
-      className="min-h-screen py-20 px-6 bg-secondary flex flex-col justify-center"
+      className="py-10 px-6 bg-secondary flex flex-col justify-center"
     >
       <motion.div
         initial={{ y: 50, opacity: 0 }}
