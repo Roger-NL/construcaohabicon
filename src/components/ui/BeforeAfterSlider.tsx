@@ -100,17 +100,19 @@ export function BeforeAfterSlider({
                 className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize -translate-x-1/2"
                 style={{ left: `${sliderPosition}%` }}
             >
-                {/* Slider Handle */}
-                <motion.div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-primary rounded-full shadow-lg flex items-center justify-center border-4 border-background"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    <div className="flex gap-1">
-                        <div className="w-0.5 h-4 bg-primary-foreground"></div>
-                        <div className="w-0.5 h-4 bg-primary-foreground"></div>
-                    </div>
-                </motion.div>
+                {/* Slider Handle Wrapper - handles positioning */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                    <motion.div
+                        className="w-12 h-12 bg-primary rounded-full shadow-lg flex items-center justify-center border-4 border-background"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <div className="flex gap-1">
+                            <div className="w-0.5 h-4 bg-primary-foreground"></div>
+                            <div className="w-0.5 h-4 bg-primary-foreground"></div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
 
             {/* Instruction hint */}
