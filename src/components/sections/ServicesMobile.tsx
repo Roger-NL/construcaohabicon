@@ -27,6 +27,8 @@ import microcimento2 from '@/assets/microcimento-2.jpg';
 import microcimento3 from '@/assets/microcimento-3.jpg';
 import chaveAntesNew from '@/assets/chave-antes-new.jpg';
 import chaveDepoisNew from '@/assets/chave-depois-new.jpg';
+import gardeningBeforeNew from '@/assets/gardening-before-new.jpg';
+import gardeningAfterNew from '@/assets/gardening-after-new.jpg';
 
 const services = [
   {
@@ -87,8 +89,8 @@ const services = [
     icon: Leaf,
     description: 'Mantemos o seu jardim sempre bonito. Corte de relva, poda, arranjos... Deixamos tudo a brilhar.',
     beforeAfter: {
-      before: gardeningBefore,
-      after: gardeningAfter,
+      before: gardeningBeforeNew,
+      after: gardeningAfterNew,
     },
     fullDescription: 'Serviço completo de manutenção e cuidado de jardins, garantindo um espaço verde sempre bem cuidado e apresentável.',
   },
