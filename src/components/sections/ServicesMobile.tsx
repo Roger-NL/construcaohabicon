@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { Home, Grid3x3, Droplet, Paintbrush, Boxes, Leaf } from 'lucide-react';
 import teamImage from '@/assets/team-mobile.jpg';
 import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider';
+import { ImageCarousel } from '@/components/ui/ImageCarousel';
 
 // Import before/after images
 import casadbanhoAntes from '@/assets/casadbanho-antes.jpg';
@@ -21,6 +22,9 @@ import gardeningBefore from '@/assets/gardening-before-wide.png';
 import gardeningAfter from '@/assets/gardening-after-wide.png';
 import ladrilhamentoMaquina from '@/assets/ladrilhamento-maquina.jpg';
 import ladrilhamentoBanheiro from '@/assets/ladrilhamento-banheiro.jpg';
+import microcimento1 from '@/assets/microcimento-1.jpg';
+import microcimento2 from '@/assets/microcimento-2.jpg';
+import microcimento3 from '@/assets/microcimento-3.jpg';
 
 const services = [
   {
@@ -49,10 +53,11 @@ const services = [
     title: 'Microcimento',
     icon: Droplet,
     description: 'Revestimento contínuo, sem juntas, feito à base de cimento, resinas, aditivos e pigmentos, aplicado em camadas finas.',
-    beforeAfter: {
-      before: corredorAntes,
-      after: corredorDepois,
-    },
+    carousel: [
+      microcimento1,
+      microcimento2,
+      microcimento3,
+    ],
     fullDescription: 'O microcimento é aplicado em camadas finas sobre diversos tipos de superfícies, tanto em ambientes internos como externos. Oferece um acabamento estético moderno e elegante, com alta resistência e durabilidade, além de ser versátil e personalizável com uma vasta gama de cores e texturas.',
   },
   {
@@ -112,6 +117,11 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             beforeLabel={(service.beforeAfter as any).beforeLabel}
             afterLabel={(service.beforeAfter as any).afterLabel}
           />
+        ) : (service as any).carousel ? (
+          <ImageCarousel
+            images={(service as any).carousel}
+            title={service.title}
+          />
         ) : (
           <div className="relative h-64">
             {(service as any).image && (
@@ -129,8 +139,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           </div>
         )}
 
-        {/* Icon with gear background - only show if no before/after */}
-        {!service.beforeAfter && (
+        {/* Icon with gear background - only show if no before/after or carousel */}
+        {!service.beforeAfter && !(service as any).carousel && (
           <motion.div
             className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30"
             whileHover={{ rotate: 360 }}
@@ -140,8 +150,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           </motion.div>
         )}
 
-        {/* Hover overlay - only if no before/after */}
-        {!service.beforeAfter && (
+        {/* Hover overlay - only if no before/after or carousel */}
+        {!service.beforeAfter && !(service as any).carousel && (
           <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         )}
       </div>
