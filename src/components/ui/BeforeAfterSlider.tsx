@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface BeforeAfterSliderProps {
@@ -41,6 +41,16 @@ export function BeforeAfterSlider({
             handleMove(e.touches[0].clientX);
         }
     };
+
+    useEffect(() => {
+        if (!isDragging && sliderPosition !== 50) {
+            const timer = setTimeout(() => {
+                setSliderPosition(50);
+            }, 3000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [isDragging, sliderPosition]);
 
     return (
         <div
