@@ -81,7 +81,7 @@ export function ContactMobile() {
 
               <div className="relative min-w-0 flex-1">
                 <p className="text-sm md:text-base text-muted-foreground font-medium mb-1">{contact.label}</p>
-                <p className={`font-bold text-foreground ${contact.label === 'Email' ? 'text-xs sm:text-sm md:text-xl break-all' : 'text-xs sm:text-sm md:text-2xl'}`}>{contact.value}</p>
+                <p className={`font-bold text-foreground ${contact.label === 'Email' ? 'text-xs sm:text-sm md:text-lg break-all md:break-normal' : 'text-xs sm:text-sm md:text-2xl'}`}>{contact.value}</p>
                 <p className="text-xs md:text-sm text-muted-foreground mt-1">{contact.subtext}</p>
               </div>
             </motion.a>
