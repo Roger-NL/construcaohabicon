@@ -19,6 +19,8 @@ import chaveDepois from '@/assets/chave-depois.png';
 import gardeningImage from '@/assets/gardening-mobile.jpg';
 import gardeningBefore from '@/assets/gardening-before-wide.png';
 import gardeningAfter from '@/assets/gardening-after-wide.png';
+import ladrilhamentoMaquina from '@/assets/ladrilhamento-maquina.jpg';
+import ladrilhamentoBanheiro from '@/assets/ladrilhamento-banheiro.jpg';
 
 const services = [
   {
@@ -36,8 +38,10 @@ const services = [
     icon: Grid3x3,
     description: 'Aplicação de cerâmicas e outros materiais de revestimento em pavimentos e paredes, garantindo um acabamento de primeira qualidade.',
     beforeAfter: {
-      before: casadbanhoAntes,
-      after: casadbanhoDep,
+      before: ladrilhamentoMaquina,
+      after: ladrilhamentoBanheiro,
+      beforeLabel: '',
+      afterLabel: '',
     },
     fullDescription: 'Acabamento de primeira qualidade e estereotomias adequadas, com recurso a máquina de corte a água. • Experiência: Apoio na escolha de soluções técnicas e estéticas. • Preparação de superfícies: Reboco, nivelamento e isolamento antes do revestimento. • Fachadas: Revestimento exterior com cerâmica, pedra ou similares. • Ladrilho hidráulico: Aplicação decorativa em interiores e exteriores.',
   },
@@ -105,6 +109,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <BeforeAfterSlider
             beforeImage={service.beforeAfter.before}
             afterImage={service.beforeAfter.after}
+            beforeLabel={(service.beforeAfter as any).beforeLabel}
+            afterLabel={(service.beforeAfter as any).afterLabel}
           />
         ) : (
           <div className="relative h-64">

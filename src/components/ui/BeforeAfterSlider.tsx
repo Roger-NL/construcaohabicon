@@ -73,9 +73,11 @@ export function BeforeAfterSlider({
                     draggable={false}
                 />
                 {/* After Label */}
-                <div className="absolute top-4 right-4 px-3 py-1 bg-primary text-primary-foreground text-sm font-bold rounded-full">
-                    {afterLabel}
-                </div>
+                {afterLabel && (
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-primary text-primary-foreground text-sm font-bold rounded-full">
+                        {afterLabel}
+                    </div>
+                )}
             </div>
 
             {/* Before Image (overlay with clip) */}
@@ -90,9 +92,11 @@ export function BeforeAfterSlider({
                     draggable={false}
                 />
                 {/* Before Label */}
-                <div className="absolute top-4 left-4 px-3 py-1 bg-muted text-muted-foreground text-sm font-bold rounded-full">
-                    {beforeLabel}
-                </div>
+                {beforeLabel && (
+                    <div className="absolute top-4 left-4 px-3 py-1 bg-muted text-muted-foreground text-sm font-bold rounded-full">
+                        {beforeLabel}
+                    </div>
+                )}
             </div>
 
             {/* Slider Line */}
