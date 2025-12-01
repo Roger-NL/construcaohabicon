@@ -25,6 +25,8 @@ import ladrilhamentoBanheiro from '@/assets/ladrilhamento-banheiro.jpg';
 import microcimento1 from '@/assets/microcimento-1.jpg';
 import microcimento2 from '@/assets/microcimento-2.jpg';
 import microcimento3 from '@/assets/microcimento-3.jpg';
+import chaveAntesNew from '@/assets/chave-antes-new.jpg';
+import chaveDepoisNew from '@/assets/chave-depois-new.jpg';
 
 const services = [
   {
@@ -32,8 +34,8 @@ const services = [
     icon: Home,
     description: 'Propomos soluções completas que integram todas as etapas de um projeto, desde a concepção até a entrega final.',
     beforeAfter: {
-      before: chaveAntes,
-      after: chaveDepois,
+      before: chaveAntesNew,
+      after: chaveDepoisNew,
     },
     fullDescription: 'Responsabilizamo-nos pela gestão dos diferentes fornecedores, contratação de mão-de-obra, integração das várias especialidades, controlo de prazos e burocracias enquanto o cliente pode manter o foco no que realmente lhe importa: a idealização. Esta é a forma mais prática e cómoda de concretizar um projeto permitindo que o cliente disfrute do serviço já pronto.',
   },

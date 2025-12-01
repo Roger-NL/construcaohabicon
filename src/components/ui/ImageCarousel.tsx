@@ -41,7 +41,7 @@ export function ImageCarousel({ images, title, className }: ImageCarouselProps) 
                     key={currentIndex}
                     src={images[currentIndex]}
                     alt={`${title} - Imagem ${currentIndex + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-black"
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
