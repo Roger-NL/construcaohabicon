@@ -171,13 +171,13 @@ export function ServicesMobile() {
     <section
       id="services"
       ref={ref}
-      className="py-10 px-6 bg-background"
+      className="py-10 md:py-32 px-6 bg-background"
     >
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8 }}
-        className="text-center mb-12"
+        className="text-center mb-12 md:mb-20"
       >
         <motion.div
           className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4"
@@ -187,16 +187,16 @@ export function ServicesMobile() {
         >
           <span className="text-sm font-semibold text-primary">Serviços</span>
         </motion.div>
-        <h2 className="text-heading font-bold text-foreground mb-3">
+        <h2 className="text-heading font-bold text-foreground mb-3 md:text-5xl">
           O Que Fazemos
         </h2>
         <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
-        <p className="text-body text-muted-foreground max-w-md mx-auto">
+        <p className="text-body text-muted-foreground max-w-md mx-auto md:text-xl md:max-w-2xl">
           Soluções completas para o seu projecto
         </p>
       </motion.div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <ServiceCard key={service.title} service={service} index={index} />
         ))}
