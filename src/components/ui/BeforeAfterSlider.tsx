@@ -97,7 +97,7 @@ export function BeforeAfterSlider({
 
             {/* Slider Line */}
             <div
-                className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize"
+                className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize -translate-x-1/2"
                 style={{ left: `${sliderPosition}%` }}
             >
                 {/* Slider Handle */}
