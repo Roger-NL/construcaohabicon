@@ -10,13 +10,15 @@ import casadbanhoAntes from '@/assets/casadbanho-antes.jpg';
 import casadbanhoDep from '@/assets/casadbanho-depois.jpg';
 import corredorAntes from '@/assets/corredor-antes.jpeg';
 import corredorDepois from '@/assets/corredor-depois.jpg';
-import frenteAntes from '@/assets/frente-antes.jpg';
-import frenteDepois from '@/assets/frente-depois.png';
+import alvenariaAntes from '@/assets/alvenaria-antes-wide.png';
+import alvenariaDepois from '@/assets/alvenaria-depois-wide.png';
 import pinturaAntes from '@/assets/pintura-antes.png';
 import pinturaDepois from '@/assets/pintura-depois.jpg';
 import chaveAntes from '@/assets/chave-antes.jpg';
 import chaveDepois from '@/assets/chave-depois.png';
 import gardeningImage from '@/assets/gardening-mobile.jpg';
+import gardeningBefore from '@/assets/gardening-before-wide.png';
+import gardeningAfter from '@/assets/gardening-after-wide.png';
 
 const services = [
   {
@@ -64,8 +66,8 @@ const services = [
     icon: Boxes,
     description: 'Executamos estruturas em alvenaria, mas também em pladur assente em diferentes tipo de perfis, incluindo isolamento acústico e térmico.',
     beforeAfter: {
-      before: frenteAntes,
-      after: frenteDepois,
+      before: alvenariaAntes,
+      after: alvenariaDepois,
     },
     fullDescription: 'Entregamos um acabamento de excelência passando por reboco, barramento (armado ou não), estuque ou capoto.',
   },
@@ -73,7 +75,10 @@ const services = [
     title: 'Jardinagem',
     icon: Leaf,
     description: 'Mantemos o seu jardim sempre bonito. Corte de relva, poda, arranjos... Deixamos tudo a brilhar.',
-    image: gardeningImage,
+    beforeAfter: {
+      before: gardeningBefore,
+      after: gardeningAfter,
+    },
     fullDescription: 'Serviço completo de manutenção e cuidado de jardins, garantindo um espaço verde sempre bem cuidado e apresentável.',
   },
 ];
@@ -103,14 +108,18 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           />
         ) : (
           <div className="relative h-64">
-            <motion.img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-full object-cover"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.6 }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+            {(service as any).image && (
+              <>
+                <motion.img
+                  src={(service as any).image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+              </>
+            )}
           </div>
         )}
 
